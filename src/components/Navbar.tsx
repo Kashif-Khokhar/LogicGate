@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Cpu, LayoutDashboard, Binary, Menu, X } from 'lucide-react';
 
@@ -12,10 +12,25 @@ const Navbar = () => {
         { path: '/truth-tables', label: 'Truth Tables', icon: Binary },
     ];
 
+    // Lock body scroll when menu is open
+    useEffect(() => {
+        if (isMenuOpen) {
+            document.body.style.overflow = 'hidden';
+            document.documentElement.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'unset';
+            document.documentElement.style.overflow = 'unset';
+        }
+        return () => {
+            document.body.style.overflow = 'unset';
+            document.documentElement.style.overflow = 'unset';
+        };
+    }, [isMenuOpen]);
+
     return (
-        <nav className="border-b border-white/5 sticky top-0 z-50 backdrop-blur-md bg-transparent">
-            <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-                <Link to="/" className="flex items-center gap-3 group z-50 relative" onClick={() => setIsMenuOpen(false)}>
+        <nav className="border-b border-white/5 sticky top-0 z-[100] backdrop-blur-md bg-[#020617]/80">
+            <div className="container mx-auto px-4 h-16 flex items-center justify-between relative z-[110]">
+                <Link to="/" className="flex items-center gap-3 group" onClick={() => setIsMenuOpen(false)}>
                     <div className="bg-white/10 p-2 rounded-xl group-hover:rotate-12 transition-transform duration-300 shadow-lg shadow-white/5 border border-white/10">
                         <img src="/logo.svg" alt="LogicGate Logo" className="w-5 h-5" />
                     </div>
@@ -49,14 +64,16 @@ const Navbar = () => {
                 {/* Mobile Menu Toggle */}
                 <button
                     onClick={() => setIsMenuOpen(!isMenuOpen)}
-                    className="md:hidden p-2 text-white hover:bg-white/10 rounded-lg transition-colors z-50 relative"
+                    className="md:hidden p-2 text-white hover:bg-white/10 rounded-lg transition-colors relative"
                 >
                     {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
                 </button>
+            </div>
 
-                {/* Mobile Navigation Overlay */}
-                {isMenuOpen && (
-                    <div className="fixed inset-0 bg-[#020617] bg-opacity-100 z-[100] flex flex-col items-center justify-center gap-8 md:hidden backdrop-blur-xl">
+            {/* Mobile Navigation Dropdown - Sits below the header */}
+            {isMenuOpen && (
+                <div className="fixed top-16 left-0 right-0 bottom-0 bg-zinc-950 z-[90] md:hidden flex flex-col p-6 border-t border-white/10 overflow-y-auto">
+                    <div className="flex flex-col gap-2">
                         {navItems.map((item) => {
                             const Icon = item.icon;
                             const isActive = location.pathname === item.path;
@@ -65,19 +82,19 @@ const Navbar = () => {
                                     key={item.path}
                                     to={item.path}
                                     onClick={() => setIsMenuOpen(false)}
-                                    className={`flex items-center gap-3 px-8 py-4 rounded-2xl transition-all duration-200 text-xl font-bold ${isActive
+                                    className={`flex items-center gap-4 px-6 py-4 rounded-xl transition-all duration-200 text-lg font-medium ${isActive
                                         ? 'bg-white/10 text-white border border-white/10'
-                                        : 'text-slate-400 hover:text-white'
+                                        : 'text-slate-400 hover:text-white hover:bg-white/5'
                                         }`}
                                 >
-                                    <Icon size={24} />
+                                    <Icon size={20} />
                                     <span>{item.label}</span>
                                 </Link>
                             );
                         })}
                     </div>
-                )}
-            </div>
+                </div>
+            )}
         </nav>
     );
 };
