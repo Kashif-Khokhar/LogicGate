@@ -1,57 +1,109 @@
 # LogicGate | Digital Logic Simulator
 
+<div align="center">
+  <img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT">
+  <img src="https://img.shields.io/badge/React-20232A?style=flat&logo=react&logoColor=61DAFB" alt="React">
+  <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat&logo=tailwind-css&logoColor=white" alt="Tailwind CSS">
+  <img src="https://img.shields.io/badge/TypeScript-007ACC?style=flat&logo=typescript&logoColor=white" alt="TypeScript">
+  <img src="https://img.shields.io/badge/Vite-646CFF?style=flat&logo=vite&logoColor=white" alt="Vite">
+</div>
 
-**LogicGate** is a modern, professional-grade digital logic simulator built for engineers, students, and hobbyists. Visualize circuit behavior in real-time with a sleek, high-contrast monochrome interface.
+---
 
-## 🚀 Features
+### 🌐 [Live Demo](https://logic-gate-nine.vercel.app/)
 
-- **Real-Time Simulation**: drag-and-drop circuit building with instant visual feedback.
-- **Monochrome Theme**: A premium Slate/Silver/Black aesthetic designed for focus and clarity.
-- **Mobile Responsive**: Fully optimized for all devices, featuring a touch-friendly interface and vertical layouts for mobile.
-- **Comprehensive Library**: Support for AND, OR, XOR, NAND, NOR, and NOT gates.
-- **Interactive Learning**: Detailed truth tables and gate specifications.
-- **Visual Feedback**: Dynamic signal path visualization with glowing indicators.
+**LogicGate** is a high-performance, professional-grade digital logic simulator designed for engineers, students, and educators. It offers a seamless, real-time environment to design, simulate, and analyze digital circuits with a premium, focused aesthetic.
+
+> [!NOTE]
+> This laboratory environment is optimized for both precision and ease of use, featuring a sophisticated monochrome dashboard that minimizes visual fatigue during complex circuit design.
+
+---
+
+## ✨ Features
+
+- **⚡ Real-Time Simulation**: Experience zero-latency circuit behavior with dynamic signal path visualization and glowing logic indicators.
+- **🎨 Premium Interface**: A sleek Slate/Silver interface designed for high contrast and modern professionalism.
+- **🧩 Comprehensive Logic Library**:
+  - **Basic Gates**: AND, OR, NOT
+  - **Advanced Gates**: NAND, NOR, XOR
+  - **Interactive Components**: Toggle Switches, Visual LED Indicators
+- **📊 Truth Tables**: Interactive reference section for quick verification of logic gate behavior.
+- **📱 Fully Responsive**: Seamlessly transition from desktop to mobile with a touch-optimized UI and adaptive vertical layouts.
+
+---
 
 ## 🛠️ Technology Stack
 
-- **Framework**: [React](https://react.dev/) + [Vite](https://vitejs.dev/)
-- **Language**: [TypeScript](https://www.typescriptlang.org/)
-- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
-- **Icons**: [Lucide React](https://lucide.dev/)
-- **Routing**: [React Router](https://reactrouter.com/)
+| Technology | Usage |
+| :--- | :--- |
+| **React 18** | UI Library & Component Architecture |
+| **Vite** | Lightning-fast Build Tool & HMR |
+| **Tailwind CSS v4** | Modern Utility-First Styling Framework |
+| **TypeScript** | Type-Safe Application Logic |
+| **Lucide React** | High-Quality Minimalist Iconography |
+| **React Router** | Client-Side Navigation & Routing |
+
+---
+
+## 🏗️ Project Structure
+
+```bash
+LogicGate/
+├── src/
+│   ├── components/    # Reusable UI elements (Navbar, Gates, etc.)
+│   ├── pages/         # Core views (Home, Simulator, TruthTables)
+│   ├── assets/        # Static imagery and resources
+│   └── index.css      # Global styles & Tailwind injections
+├── public/            # Static assets
+└── vite.config.ts     # Build configuration
+```
+
+---
 
 ## 📦 Getting Started
 
-1.  **Clone the repository**
-    ```bash
-    git clone https://github.com/Kashif-Khokhar/LogicGate.git
-    cd LogicGate
-    ```
+### Prerequisites
 
-2.  **Install dependencies**
-    ```bash
-    npm install
-    ```
+- **Node.js** (v18 or higher)
+- **npm** or **yarn**
 
-3.  **Run the development server**
-    ```bash
-    npm run dev
-    ```
+### Installation
 
-4.  **Build for production**
-    ```bash
-    npm run build
-    ```
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/Kashif-Khokhar/LogicGate.git
+   cd LogicGate
+   ```
 
-## 📱 Mobile Experience
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-The application features a dedicated mobile layout:
-- **Responsive Navbar**: Hamburger menu for seamless navigation.
-- **Vertical Stack**: Simulation components automatically stack for better usability on small screens.
-- **Touch Optimized**: Large interactions targets for gates and switches.
+3. **Start Development Server**
+   ```bash
+   npm run dev
+   ```
+
+4. **Production Build**
+   ```bash
+   npm run build
+   ```
+
+---
+
+## 👨‍� Author
+
+**Kashif Ali Khokhar**
+
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Kashif-Khokhar)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/kashif-ali-khokhar/)
+
+---
 
 ## 📄 License
 
-This project is open source and available under the [MIT License](LICENSE).
+Distributed under the MIT License. See `LICENSE` for more information.
 
 ---
+<p align="center">Built with ❤️ for the Digital Engineering Community</p>
